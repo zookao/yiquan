@@ -52,8 +52,8 @@ class Meituan
         $result = curlGet($url);
         $array = json_decode($result,true);
         if(isset($array['code']) && $array['code'] == 200){
-            $url = $array['data']['url'];
-            return $url;
+            $page = $array['data']['wx_app']['page_url'];
+            return $page;
         }else{
             return '请重试';
         }

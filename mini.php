@@ -7,6 +7,10 @@ if(strtolower($_SERVER['REQUEST_METHOD']) == 'post'){
         include __DIR__.'/lib/meituan.php';
         $result = Meituan::waimaiMini();
         echo json_encode(['code' => 1,'data' => $result]);die;
+    }elseif($type == 'meituanshangou'){
+        include __DIR__.'/lib/meituan.php';
+        $result = Meituan::shangou();
+        echo json_encode(['code' => 1,'data' => $result]);die;
     }elseif($type == 'eleme'){
         include __DIR__.'/lib/taobao.php';
         $result = Taobao::elemeMini();
